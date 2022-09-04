@@ -4,7 +4,9 @@ import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '@expo/vector-icons/Ionicons';
+import {FaHome} from 'react-icons/fa';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import {AntDesign} from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
 
 const App = () => {
@@ -12,20 +14,25 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
-          tabBarActiveTintColor: 'rer',
+          tabBarActiveTintColor: 'red',
         }}>
         <Tab.Screen
           name="Home"
           component={HomeScreen}
-          options={
-            {
-              // tabBarIcon: () => (
-              //   <Ionicons name="md-checkmark-circle" size={32} color="green" />
-              // ),
-            }
-          }
+          options={{
+            // tabBarIcon: () => <FaHome />,
+            tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,
+          }}
         />
-        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{
+            tabBarIcon: () => (
+              <AntDesign name="search1" size={24} color="black" />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
