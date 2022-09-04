@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
+import moment from 'moment';
 
 const Article = props => {
   return (
@@ -13,12 +14,17 @@ const Article = props => {
 
       <View style={{padding: 20}}>
         <Text style={style.title}>{props.title}</Text>
-        <Text style={style.desc}>{props.description}</Text>
+        <Text style={style.desc} numberOfLines={3}>
+          {props.description}
+        </Text>
         <View style={style.data}>
           <Text style={style.heading}>
             by: <Text style={style.autor}>{props.author}</Text>
           </Text>
-          <Text style={style.date}>{props.publishedAt}</Text>
+          {/* <Text style={style.date}>{props.publishedAt}</Text> */}
+          <Text style={style.date}>
+            {moment(props.publishedAt).format('MMM Do YY')}
+          </Text>
         </View>
         <View>
           <Text style={{marginTop: 10}}>
