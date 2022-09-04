@@ -1,10 +1,10 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, Webbrowser, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import moment from 'moment';
 
 const Article = props => {
   return (
-    <View style={style.container}>
+    <Webbrowser url={props.url} style={style.container}>
       <Image
         style={style.image}
         source={{
@@ -35,7 +35,7 @@ const Article = props => {
           </Text>
         </View>
       </View>
-    </View>
+    </Webbrowser>
   );
 };
 
