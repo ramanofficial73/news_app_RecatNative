@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {ScrollView, View, Text} from 'react-native';
 
 const categories = [
+  'Technology',
+  'Business',
   'Entertainment',
-  'business',
   'Politics',
   'Health',
-  'Technology',
   'Sports',
 ];
 

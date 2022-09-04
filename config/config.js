@@ -1,3 +1,4 @@
-// import {API_KEY} from '@env';
+import {API_KEY} from 'react-native-dotenv';
 
-// export default {API_KEY};
+console.log(API_KEy);
+export default {API_KEY};

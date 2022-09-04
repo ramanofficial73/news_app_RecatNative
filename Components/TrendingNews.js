@@ -8,12 +8,12 @@ class TrendingNews extends Component {
   };
   componentDidMount() {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`,
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=9c5a58c96b214d468e8f20d5571dae83`,
     ).then(res =>
       res
         .json()
         .then(response => {
-          console.log(response);
+          //   console.log(response);
           this.setState({
             news: response.articles,
           });
@@ -30,14 +30,15 @@ class TrendingNews extends Component {
         <ActivityIndicator color="black" size="large" />
       ) : (
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {this.state.news.map((news, index) => {
+          {this.state.news.map((news, index) => (
             <View key={index}>
+              {/* {API_KEY} */}
               <Image
                 source={{uri: `${news.urlToImage}`}}
                 style={{height: 200, width: 200}}
               />
-            </View>;
-          })}
+            </View>
+          ))}
         </ScrollView>
       )}
     </View>;
