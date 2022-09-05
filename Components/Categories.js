@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, View, Text} from 'react-native';
+import {ScrollView, View, Text, TouchableOpacity} from 'react-native';
 
 const categories = [
   'Technology',
@@ -17,20 +17,28 @@ export default class Categories extends Component {
     return (
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {categories.map((category, index) => (
-          <View>
-            <Text
-              style={{
-                padding: 10,
-                borderWidth: 1,
-                borderColor: 'black',
-                fontSize: 19,
-                margin: 10,
-                borderRadius: 10,
-              }}
-              key={index}>
-              {category}
-            </Text>
-          </View>
+          <TouchableOpacity
+            key={index}
+            onPress={() =>
+              this.props.navigation.navigate('GetNews', {
+                category,
+              })
+            }>
+            <View>
+              <Text
+                style={{
+                  padding: 10,
+                  borderWidth: 1,
+                  borderColor: 'black',
+                  fontSize: 19,
+                  margin: 10,
+                  borderRadius: 10,
+                }}
+                key={index}>
+                {category}
+              </Text>
+            </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     );

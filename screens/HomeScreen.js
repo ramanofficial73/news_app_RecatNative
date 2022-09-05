@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import Categories from '../Components/Categories';
 import TrendingNews from '../Components/TrendingNews';
-// import config from '../config/config';
-
+import Categories from '../Components/Categories';
 const API_KEY = '9c5a58c96b214d468e8f20d5571dae83';
 
 export default class HomeScreen extends Component {
@@ -13,9 +11,9 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View>
-        <Categories />
+        <Categories navigation={this.props.navigation} />
         <TrendingNews />
-        <Text>Home jh b</Text>
+        <Text>Home</Text>
       </View>
     );
   }
