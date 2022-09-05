@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import GetNews from './screens/GetNews';
+import WebViewCom from './Components/WebView';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,11 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Trending" component={HomeScreen} />
         <Stack.Screen name="GetNews" component={GetNews} />
+        <Stack.Screen
+          name="WebView"
+          component={WebViewCom}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
