@@ -28,15 +28,24 @@ export default class TrendingNews extends Component {
         ) : (
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {this.state.news.map((news, index) => (
-              <View style={{margin: 10}}>
-                <Image
-                  source={{uri: `${news.urlToImage}`}}
-                  style={{height: 200, width: 200, borderRadius: 10}}
-                />
-                <Text style={{width: 200, textAlign: 'justify'}}>
-                  {news.title}
-                </Text>
-              </View>
+              <TouchableOpacity
+                key={index}
+                onPress={() =>
+                  this.props.navigation.navigate('WebView', {
+                    url: news.url,
+                  })
+                }>
+                <View style={{margin: 10}}>
+                  <Image
+                    source={{uri: `${news.urlToImage}`}}
+                    style={{height: 150, width: 200, borderRadius: 10}}
+                  />
+                  <Text
+                    style={{width: 200, color: 'black', textAlign: 'justify'}}>
+                    {news.title}
+                  </Text>
+                </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
         )}

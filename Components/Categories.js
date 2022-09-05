@@ -3,11 +3,13 @@ import {ScrollView, View, Text, TouchableOpacity} from 'react-native';
 
 const categories = [
   'Technology',
+  'Science',
   'Business',
   'Entertainment',
   'Politics',
   'Health',
   'Sports',
+  'General',
 ];
 
 export default class Categories extends Component {
